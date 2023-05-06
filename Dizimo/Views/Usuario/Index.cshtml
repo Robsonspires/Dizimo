@@ -1,9 +1,10 @@
-﻿@model List<UsuarioModel>
+﻿@using System.Globalization;
+@model List<UsuarioModel>
 
 @{
     ViewData["Title"] = "Listagem de usuários";
 }
-<div class="text-center">
+<div class="text-center p-3">
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <a class="btn btn-primary" role="button" asp-controller="Usuario" asp-action="Criar">Adicionar novo usuario</a>
     </div>
@@ -29,7 +30,7 @@
 
 <h1 class="display-4">Listagem de usuarios</h1>
 
- <table class="table" id="table-usuarios">
+ <table class="table" id="table-usuarios" style="width:100%">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -37,6 +38,7 @@
             <th scope="col">Login</th>
             <th scope="col">e-Mail</th>
             <th scope="col">Perfil</th>
+                <th scope="col">Comunidade</th>
             <th scope="col">Data de Cadastro</th>
             <th scope="col"></th>
         </tr>
@@ -53,13 +55,20 @@
                             <td>@usuario.Login</td>
                             <td>@usuario.Email</td>
                             
-                            @*<td>@(usuario.Perfil == Dizimo.Enums.PerfilEnum.Admin ? "Administrador" : "Padrão")</td> VER MELHOR NO FUTURO*@
-                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.Admin) {<td>Adminitrador</td> }
-                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.Dizimo) { <td>Coord. Dízimo</td> }
-                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.Tesoureiro) { <td>Tesoureiro</td> }
-                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.Padrao) { <td>Padrão</td> }
+                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.Paroco)      { <td>Pároco ou Adminitrador</td> }
+                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.TesoureiroP) { <td>Tesoureiro Paroquial</td> }
+                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.TesoureiroC) { <td>Tesoureiro Comunidade</td> }
+                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.Dizimo)      { <td>Coordenador do Dizimo</td> }
+                            @if (usuario.Perfil == Dizimo.Enums.PerfilEnum.Padrao)      { <td>Padrão</td> }
 
-                            <td>@usuario.DataCadastro</td>
+                            <td>
+                                @usuario.comunidade.Nome
+                            </td>
+
+                            <td>
+                                @usuario.DataCadastro
+                            </td>
+
                             <td>
                                 <div class="btn-group" role="group">
                                     <a role="button" class="btn btn-primary" asp-route-id="@usuario.Id" asp-controller="Usuario" asp-action="Editar">Editar</a>

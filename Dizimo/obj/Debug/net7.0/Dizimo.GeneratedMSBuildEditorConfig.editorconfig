@@ -20,6 +20,18 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJhclNlbmhhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Comunidades/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tdW5pZGFkZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Comunidades/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tdW5pZGFkZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Comunidades/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tdW5pZGFkZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Usr/Projetos/Dizimo/Dizimo/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +46,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Usr/Projetos/Dizimo/Dizimo/Views/Login/RedefinirSenha.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVkZWZpbmlyU2VuaGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Pessoa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Pessoa/PessoaApagarConfirmacao.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXFBlc3NvYUFwYWdhckNvbmZpcm1hY2FvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Pessoa/PessoaCriar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXFBlc3NvYUNyaWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Pessoa/PessoaEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXFBlc3NvYUVkaXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Usr/Projetos/Dizimo/Dizimo/Views/Restrito/Index.cshtml]

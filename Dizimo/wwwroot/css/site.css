@@ -18,6 +18,10 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    min-width: 372px;
+}
+
+.wrapper {
+    min-height: 100vh;
 }
 

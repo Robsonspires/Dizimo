@@ -1,4 +1,5 @@
-﻿using Dizimo.Models;
+﻿using Dizimo.Enums;
+using Dizimo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
@@ -25,11 +26,11 @@ namespace Dizimo.Filters
                     context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Index" } });
                 }
 
-                if(usuario.Perfil != Enums.PerfilEnum.Admin)
+                if (usuario.Perfil != Enums.PerfilEnum.Paroco)
                 {
-                    context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Restrito" }, { "action", "Index" } });
-                }
-
+                        context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Restrito" }, { "action", "Index" } });
+                } 
+                
             }
 
             base.OnActionExecuting(context);

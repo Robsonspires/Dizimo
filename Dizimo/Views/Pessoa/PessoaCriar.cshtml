@@ -1,0 +1,103 @@
+﻿@using Dizimo.Enums;
+@model PessoaModel
+
+@{
+    ViewData["Title"] = "Novo Cadastro";
+}
+
+<div class="text-center">
+    
+    <h1 class="display-4">Cadastrar Pessoas</h1>
+
+</div>
+
+
+<form asp-controller="Pessoa" asp-action="PessoaCriar" method="post">
+    
+    <div class="form-row row mb-3">
+        <div class="form-group col-sm-6">
+            <label for="Nome" class="form-label"></label>
+            <input type="text" asp-for="Nome" class="form-control" placeholder="Nome Completo" />
+            @Html.ValidationMessageFor(x => x.Nome)
+        </div>
+        <div class="form-group col-sm-2">
+            <label for="DataNascimento" class="form-label"></label>
+            <input type="date" asp-for="DataNascimento" class="form-control" />
+            @Html.ValidationMessageFor(x => x.DataNascimento)
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="CpfCnpj" class="form-label"></label>
+            <input asp-for="CpfCnpj" class="form-control" placeholder="Documento (CPF/CNPJ)" />
+            @Html.ValidationMessageFor(x => x.CpfCnpj)
+        </div>
+    </div>
+
+    <div class="form-row row mb-3">
+        <div class="form-group col-sm-6">
+            <label for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" placeholder="Email" />
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+        <div class="form-group col-sm-3">
+            <label for="Fone" class="form-label"></label>
+            <input asp-for="Fone" class="form-control" placeholder="Telefone" />
+            @Html.ValidationMessageFor(x => x.Fone)
+        </div>
+    </div>
+
+    <div class="form-row row mb-3">
+        <div class="form-group col-sm-2">
+            <label for="CEP" class="form-label"></label>
+            <input asp-for="CEP" class="form-control" placeholder="CEP" />
+            @Html.ValidationMessageFor(x => x.CEP)
+        </div>
+        <div class="form-group col-sm-6">
+            <label for="Endereco" class="form-label"></label>
+            <input asp-for="Endereco" class="form-control" placeholder="Endereço" />
+            @Html.ValidationMessageFor(x => x.Endereco)
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="Complemento" class="form-label"></label>
+            <input asp-for="Complemento" class="form-control" placeholder="Complemento Apto, casa...." />
+            @Html.ValidationMessageFor(x => x.Complemento)
+        </div>
+
+        <div class="form-row row mb-3">
+            <div class="form-group col-sm-4">
+                <label for="Cidade" class="form-label"></label>
+                <input asp-for="Cidade" class="form-control" placeholder="Cidade" />
+                @Html.ValidationMessageFor(x => x.Cidade)
+            </div>
+            <div class="form-group col-sm-2">
+                <label for="UF" class="form-label"></label>
+                <input asp-for="UF" class="form-control" placeholder="Estado" />
+                @Html.ValidationMessageFor(x => x.UF)
+            </div>
+            <div class="form-group mb-3 col-sm-4">
+                <label for="tipoPessoa">Tipo Pessoa</label>
+                <select asp-for="TipoPessoa" class="form-control">
+                    <option value="">Selecione</option>
+                    <option value="@TipoPessoaEnum.Dizimista">Dizimista</option>
+                    <option value="@TipoPessoaEnum.Comunidade">Comunidade</option>
+                    <option value="@TipoPessoaEnum.Paroquia">Paróquia</option>
+                    <option value="@TipoPessoaEnum.Diocese">(arqui)Diocese</option>
+                </select>
+                @Html.ValidationMessageFor(x => x.TipoPessoa)
+            </div>
+        </div>
+
+        <div class="form-group p-2">
+            <div class="row text-center">
+                <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                    <input type="submit" asp-controller="Pessoa" value="Salvar" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                    <a asp-controller="Pessoa" asp-action="Index" class="btn btn-secondary btn-block">
+                        <i class="fa fa-table"></i>Voltar
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

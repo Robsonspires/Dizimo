@@ -1,5 +1,6 @@
 ﻿@using Dizimo.Enums;
-@model UsuarioModel
+@using Dizimo.Repositorio;
+@model Dizimo.Models.UsuarioModel
 
 @{
     ViewData["Title"] = "Editar usuario";
@@ -7,12 +8,14 @@
 
 <div class="text-center">
     
-    <h1 class="display-4">Cadastrar usuário</h1>
+    <h1 class="display-4">Editar usuário</h1>
 
 </div>
 
 <form asp-controller="Usuario" asp-action="Editar" method="post">
+
     <input type="hidden" asp-for="Id" />
+
     <div class="mx-auto col-4">
         <div class="form-group mb-3">
             <label for="nome">Nome</label>
@@ -33,12 +36,25 @@
         </div>
 
         <div class="form-group mb-3">
-            <label for="perfil">perfil</label>
+            <label for="comunidade" class="form-label">Comunidade</label>
+            <select asp-for="ComunidadeId" class="form-control">
+                <option value="">Selecione</option>
+                @foreach (var item in Model.ListaComunidades)
+                {
+                    <option value="@item.Id">@item.Nome</option>
+                }
+            </select>
+            @Html.ValidationMessageFor(x => x.ComunidadeId)
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="perfil">Perfil</label>
             <select asp-for="Perfil" class="form-control">
                 <option value="">Selecione</option>
-                <option value="@PerfilEnum.Admin">Administrador</option>
-                <option value="@PerfilEnum.Dizimo">Coordenador Dízimo</option>
-                <option value="@PerfilEnum.Tesoureiro">Tesoureiro Comunidade</option>
+                <option value="@PerfilEnum.Paroco">Pároco ou Administrador</option>
+                <option value="@PerfilEnum.TesoureiroP">Tesoureiro Paroquial</option>
+                <option value="@PerfilEnum.TesoureiroC">Tesoureiro Comunidade</option>
+                <option value="@PerfilEnum.Dizimo">Coordenador do Dízimo</option>
                 <option value="@PerfilEnum.Padrao">Padrão</option>
             </select>
             @Html.ValidationMessageFor(x => x.Perfil)

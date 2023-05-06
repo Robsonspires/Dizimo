@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Dizimo.Models.ComunidadeModel>
+
+@{
+    ViewData["Title"] = "Lista de Comunidades";
+}
+
+<div class="text-center p-3">
+    <p>
+        <a asp-action="Create">Cadastrar comunidade</a>
+    </p>
+
+    <table class="table" id="table-Comunidades" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataFundacao)
+                </th>
+    @*            <th>
+                    @Html.DisplayNameFor(model => model.Cnpj)
+                </th>
+    *@            <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fone)
+                </th>
+      @*          <th>
+                    @Html.DisplayNameFor(model => model.CEP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Endereco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Complemento)
+                </th>
+    *@            <th>
+                    @Html.DisplayNameFor(model => model.Bairro)
+                </th>
+    @*            <th>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UF)
+                </th>
+      *@          <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataFundacao)
+                </td>
+    @*            <td>
+                    @Html.DisplayFor(modelItem => item.Cnpj)
+                </td>
+    *@            <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fone)
+                </td>
+      @*          <td>
+                    @Html.DisplayFor(modelItem => item.CEP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Complemento)
+                </td>
+      *@          <td>
+                    @Html.DisplayFor(modelItem => item.Bairro)
+                </td>
+    @*            <td>
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UF)
+                </td>
+    *@            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    @*<a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |*@
+                    <a asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

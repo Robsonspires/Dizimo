@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\img\\ofir1.jpg"
     },
     {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\ofir2.jpg",
+      "PackagePath": "staticwebassets\\img\\ofir2.jpg"
+    },
+    {
       "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

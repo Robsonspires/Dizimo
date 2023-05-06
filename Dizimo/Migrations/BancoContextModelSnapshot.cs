@@ -22,6 +22,123 @@ namespace Dizimo.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Dizimo.Models.ComunidadeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Bairro")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cidade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cnpj")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Complemento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataFundacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UF")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UsuarioModelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioModelId");
+
+                    b.ToTable("Comunidades");
+                });
+
+            modelBuilder.Entity("Dizimo.Models.PessoaModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Bairro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CEP")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Complemento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CpfCnpj")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Endereco")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TipoPessoa")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UF")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pessoas");
+                });
+
             modelBuilder.Entity("Dizimo.Models.UsuarioModel", b =>
                 {
                     b.Property<int>("Id")
@@ -30,7 +147,10 @@ namespace Dizimo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DataAtualizacao")
+                    b.Property<int>("ComunidadeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DataAtualizacao")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataCadastro")
@@ -57,7 +177,32 @@ namespace Dizimo.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ComunidadeId");
+
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("Dizimo.Models.ComunidadeModel", b =>
+                {
+                    b.HasOne("Dizimo.Models.UsuarioModel", null)
+                        .WithMany("ListaComunidades")
+                        .HasForeignKey("UsuarioModelId");
+                });
+
+            modelBuilder.Entity("Dizimo.Models.UsuarioModel", b =>
+                {
+                    b.HasOne("Dizimo.Models.ComunidadeModel", "comunidade")
+                        .WithMany()
+                        .HasForeignKey("ComunidadeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("comunidade");
+                });
+
+            modelBuilder.Entity("Dizimo.Models.UsuarioModel", b =>
+                {
+                    b.Navigation("ListaComunidades");
                 });
 #pragma warning restore 612, 618
         }

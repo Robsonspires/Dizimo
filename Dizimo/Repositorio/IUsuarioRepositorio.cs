@@ -19,5 +19,6 @@ namespace Dizimo.Repositorio
         UsuarioModel AlterarSenha(AlterarSenhaModel alterarSenhaModel);
 
         bool Apagar(int id);
+        void Atualizar(UsuarioSemSenhaModel usuarioModel);
     }
 }

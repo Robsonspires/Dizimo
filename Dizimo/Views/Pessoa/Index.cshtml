@@ -1,0 +1,80 @@
+﻿@model List<PessoaModel>
+
+@{
+    ViewData["Title"] = "Listagem de Pessoas";
+}
+
+
+<div class="text-center p-3">
+   
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Pessoa" asp-action="PessoaCriar">Criar novo cadastro</a>
+    </div>
+    <br />
+
+    <h1 class="display-4">Listagem de pessoas</h1>
+
+     <table class="table" id="table-pessoas">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data Nascimento</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Tipo</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        
+        <tbody>
+           @if (Model != null && Model.Any())
+                {
+                    {
+                        @foreach (PessoaModel pessoa in Model)
+                        {
+                            <tr>
+                            <th scope="row">@pessoa.Id</th>
+                            <td>@pessoa.Nome</td>
+                            <td>@pessoa.DataNascimento</td>
+                            <td>@pessoa.Fone</td>
+                            
+                            @if (pessoa.TipoPessoa == Dizimo.Enums.TipoPessoaEnum.Dizimista) {<td>Dizimista</td> }
+                            @if (pessoa.TipoPessoa == Dizimo.Enums.TipoPessoaEnum.Comunidade) {<td>Comunidade</td> }
+                            @if (pessoa.TipoPessoa == Dizimo.Enums.TipoPessoaEnum.Paroquia) {<td>Paróquia</td> }
+                            @if (pessoa.TipoPessoa == Dizimo.Enums.TipoPessoaEnum.Diocese) {<td>(Arqui)Diocese</td> }
+                            
+                            <td>@pessoa.DataCadastro</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a role="button" class="btn btn-primary" asp-route-id="@pessoa.Id" asp-controller="Pessoa" asp-action="PessoaEditar">Editar</a>
+                                    <a role="button" class="btn btn-danger" asp-route-id="@pessoa.Id" asp-controller="Pessoa" asp-action="PessoaApagarConfirmacao">Apagar</a>
+                                </div>
+                            </td>
+                            </tr>
+                        }
+                    }
+                }
+                else
+                {
+                    <tr class="odd"><td valign="top" colspan="5">Nenhum cadastro encontrado</td></tr>
+                }
+        </tbody>
+    </table>
+
+</div>

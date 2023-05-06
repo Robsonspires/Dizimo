@@ -2,6 +2,9 @@
 using Dizimo.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
+using System.Configuration;
 
 #nullable disable
 
@@ -24,17 +27,29 @@ namespace Dizimo.Models
         [Required(ErrorMessage = "Digite o e-mail do contato.")]
         [EmailAddress(ErrorMessage = "O e-mail informado não é válido.")]
         public string Email { get; set; }
-        
+
         [Required(ErrorMessage = "Informe o perfil do usuário.")]
         public PerfilEnum Perfil { get; set; }
 
-        
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataCadastro { get; set; }
+        
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? DataAtualizacao { get; set; }
+        
+        [DefaultValue(0)]
+        public int ComunidadeId { get; set; }
+        
+        public ComunidadeModel comunidade { get; set; }
 
-        public DateTime DataAtualizacao { get; set; }
+        public List<ComunidadeModel> ListaComunidades { get; set; }
+
 
         public bool SenhaValida(string senha)
         {
+            //2ba733e086e7c2f98b3a193782146ad21060c051 -> 1340
             return Senha == senha.GerarHash();
         }
 

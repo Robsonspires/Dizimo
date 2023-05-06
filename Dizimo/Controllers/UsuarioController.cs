@@ -1,7 +1,9 @@
-﻿using Dizimo.Filters;
+﻿using Dizimo.Data;
+using Dizimo.Filters;
 using Dizimo.Models;
 using Dizimo.Repositorio;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dizimo.Controllers
 {
@@ -9,22 +11,32 @@ namespace Dizimo.Controllers
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
-        public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
+        private readonly BancoContext _bancoContext;
+
+        public UsuarioController(IUsuarioRepositorio usuarioRepositorio, BancoContext bancoContext)
         {
             _usuarioRepositorio = usuarioRepositorio;
+            _bancoContext = bancoContext;
         }
+
         public IActionResult Index()
         {
             List<UsuarioModel> usuarios = _usuarioRepositorio.BuscarTodos();
             return View(usuarios);
         }
+
         public IActionResult Criar()
         {
-            return View();
+            UsuarioModel usuario = new UsuarioModel();
+            usuario.ListaComunidades = _bancoContext.Comunidades.ToList();
+            return View(usuario);
         }
+
         public IActionResult Editar(int id)
         {
             UsuarioModel usuario = _usuarioRepositorio.ListarPorId(id);
+            usuario.ListaComunidades = _bancoContext.Comunidades.ToList();
+
             return View(usuario);
         }
         public IActionResult ApagarConfirmacao(int id)
@@ -46,7 +58,6 @@ namespace Dizimo.Controllers
                 {
                     TempData["MensagemErro"] = $"Ops, não conseguimos apagar seu usuário.";
                 }
-
                 return RedirectToAction("Index");
             }
             catch (Exception erro)
@@ -56,6 +67,9 @@ namespace Dizimo.Controllers
             }
         }
 
+        // HTTPPOST A PARTIR DAQUI ------------------
+        // HTTPPOST USAR O REPOSITORIO
+
 
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)
@@ -64,10 +78,11 @@ namespace Dizimo.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _usuarioRepositorio.Adicionar(usuario);
+                    usuario = _usuarioRepositorio.Adicionar(usuario);
                     TempData["MensagemSucesso"] = "Usuário cadastrado com sucesso.";
                     return RedirectToAction("Index");
                 }
+
                 return View(usuario);
             }
             catch (System.Exception erro)
@@ -78,34 +93,29 @@ namespace Dizimo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar(UsuarioSemSenhaModel usuarioSemSenhaModel)
+        public IActionResult Editar(UsuarioModel usuario)
         {
+            _usuarioRepositorio.Atualizar(usuario);
+            TempData["MensagemSucesso"] = "Usuário Alterado com sucesso.";
+            return RedirectToAction("index");
+            /*
             try
             {
-                UsuarioModel usuario = null;
                 if (ModelState.IsValid)
                 {
-                    usuario = new UsuarioModel()
-                    {
-                        Id = usuarioSemSenhaModel.Id,
-                        Nome = usuarioSemSenhaModel.Nome,
-                        Login = usuarioSemSenhaModel.Login,
-                        Email = usuarioSemSenhaModel.Email,
-                        Perfil = usuarioSemSenhaModel.Perfil
-                    };
-
-                    usuario = _usuarioRepositorio.Atualizar(usuario);
+                    _usuarioRepositorio.Atualizar(usuario);
                     TempData["MensagemSucesso"] = "Usuário Alterado com sucesso.";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("index");
                 }
-                return View("Editar", usuario);
-
+                return View("Index");
             }
             catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos Alterar seu usuário, tente novamente, detalhe do erro: {erro.Message}.";
                 return RedirectToAction("Index");
-            }
+            }*/
         }
+        
     }
+
 }

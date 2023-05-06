@@ -16,6 +16,8 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 //builder.Services.AddScoped<IContatoRepositorio, ContatoRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+builder.Services.AddScoped<IPessoaRepositorio, PessoaRepositorio>();
+builder.Services.AddScoped<IComunidadeRepositorio, ComunidadeRepositorio>();
 builder.Services.AddScoped<ISessao, Sessao>();
 builder.Services.AddScoped<IEmail, Email>();
 
@@ -35,9 +37,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
-//app.UseStaticFiles();
+app.UseStaticFiles();
 
 app.UseSession();
 

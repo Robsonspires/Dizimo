@@ -16,8 +16,13 @@ namespace Dizimo.Models
         [Required(ErrorMessage = "Digite o e-mail do contato.")]
         [EmailAddress(ErrorMessage = "O e-mail informado não é válido.")]
         public string Email { get; set; }
-
-        [Required(ErrorMessage ="Informe o perfil do usuário.")]
         public PerfilEnum Perfil { get; set; }
+
+        //public ComunidadeModel Comunidade { get; set; }
+       
+        //public int ComunidadeId { get; set; }
+        
+       // public List<ComunidadeModel> ListaComunidades { get; set; }
+
     }
 }

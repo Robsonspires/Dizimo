@@ -2,9 +2,10 @@
 {
     public enum PerfilEnum
     {
-        Admin = 1,
-        Dizimo = 2,
-        Tesoureiro = 3,
-        Padrao = 4
+        Paroco = 1,
+        TesoureiroP = 2,
+        TesoureiroC = 3,
+        Dizimo = 4,
+        Padrao = 5
     }
 }

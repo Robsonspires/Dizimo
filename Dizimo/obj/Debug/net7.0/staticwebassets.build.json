@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5yXgQltMDN83h1hzg899F4SXMoutdyTa5vVz0qyEx7M=",
+  "Hash": "Q1+Wfkivgg2llJ/X1TsaT4x3SaMBk6ez1jFUdoIf5Mo=",
   "Source": "Dizimo",
   "BasePath": "_content/Dizimo",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\ofir1.jpg"
+    },
+    {
+      "Identity": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\ofir2.jpg",
+      "SourceId": "Dizimo",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\",
+      "BasePath": "_content/Dizimo",
+      "RelativePath": "img/ofir2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ofir2.jpg"
     },
     {
       "Identity": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\js\\site.js",

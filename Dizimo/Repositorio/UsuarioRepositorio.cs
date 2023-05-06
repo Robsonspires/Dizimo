@@ -1,6 +1,7 @@
 ﻿using Dizimo.Data;
 using Dizimo.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 #nullable disable
 
@@ -28,12 +29,12 @@ namespace Dizimo.Repositorio
 
         public UsuarioModel ListarPorId(int id)
         {
-            return _bancoContext.Usuarios.FirstOrDefault(x => x.Id == id);
+            return _bancoContext.Usuarios.Include(c => c.comunidade).FirstOrDefault(x => x.Id == id);
         }
 
         public List<UsuarioModel> BuscarTodos()
         {
-            return _bancoContext.Usuarios.ToList();
+            return _bancoContext.Usuarios.Include(c => c.comunidade).ToList();
         }
 
         public UsuarioModel Adicionar(UsuarioModel usuario)
@@ -42,6 +43,7 @@ namespace Dizimo.Repositorio
             usuario.SetSenhaHash();
             _bancoContext.Usuarios.Add(usuario);
             _bancoContext.SaveChanges();
+
             return usuario;
         }
 
@@ -49,11 +51,12 @@ namespace Dizimo.Repositorio
         {
             UsuarioModel usuarioDB = ListarPorId(usuario.Id);
 
-            if (usuarioDB == null) throw new System.Exception("Houve um erro na atualização do usuario");
+            if (usuarioDB == null) throw new System.Exception($"Erro na atualização: usuario={usuario.Nome}.");
             usuarioDB.Nome = usuario.Nome;
             usuarioDB.Email = usuario.Email;
             usuarioDB.Login = usuario.Login;
             usuarioDB.Perfil= usuario.Perfil;
+            usuarioDB.ComunidadeId = usuario.ComunidadeId;
             usuarioDB.DataAtualizacao = DateTime.Now;
 
             _bancoContext.Usuarios.Update(usuarioDB);
@@ -94,6 +97,9 @@ namespace Dizimo.Repositorio
             return true;
         }
 
-        
+        public void Atualizar(UsuarioSemSenhaModel usuarioModel)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
