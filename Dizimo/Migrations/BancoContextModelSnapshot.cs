@@ -50,6 +50,9 @@ namespace Dizimo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ControlePagamentoModelId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DataFundacao")
                         .HasColumnType("datetime2");
 
@@ -78,12 +81,88 @@ namespace Dizimo.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ControlePagamentoModelId");
+
                     b.HasIndex("UsuarioModelId");
 
                     b.ToTable("Comunidades");
                 });
 
-            modelBuilder.Entity("Dizimo.Models.PessoaModel", b =>
+            modelBuilder.Entity("Dizimo.Models.ControlePagamentoModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Abril")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Agosto")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Atualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ComunidadeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Dezembro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("DizimistaId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Fevereiro")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Janeiro")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Julho")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Junho")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Maio")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Marco")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("MesAno")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Novembro")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Outubro")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Setembro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("UsuarioID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("comunidadecpId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("dizimistacpId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("comunidadecpId");
+
+                    b.HasIndex("dizimistacpId");
+
+                    b.ToTable("ControlePagamentos");
+                });
+
+            modelBuilder.Entity("Dizimo.Models.DizimistaModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,6 +181,9 @@ namespace Dizimo.Migrations
 
                     b.Property<string>("Complemento")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ControlePagamentoModelId")
+                        .HasColumnType("int");
 
                     b.Property<string>("CpfCnpj")
                         .HasColumnType("nvarchar(max)");
@@ -128,15 +210,14 @@ namespace Dizimo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TipoPessoa")
-                        .HasColumnType("int");
-
                     b.Property<string>("UF")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pessoas");
+                    b.HasIndex("ControlePagamentoModelId");
+
+                    b.ToTable("Dizimistas");
                 });
 
             modelBuilder.Entity("Dizimo.Models.UsuarioModel", b =>
@@ -184,9 +265,35 @@ namespace Dizimo.Migrations
 
             modelBuilder.Entity("Dizimo.Models.ComunidadeModel", b =>
                 {
+                    b.HasOne("Dizimo.Models.ControlePagamentoModel", null)
+                        .WithMany("ListaPagamentoComunidades")
+                        .HasForeignKey("ControlePagamentoModelId");
+
                     b.HasOne("Dizimo.Models.UsuarioModel", null)
                         .WithMany("ListaComunidades")
                         .HasForeignKey("UsuarioModelId");
+                });
+
+            modelBuilder.Entity("Dizimo.Models.ControlePagamentoModel", b =>
+                {
+                    b.HasOne("Dizimo.Models.ComunidadeModel", "comunidadecp")
+                        .WithMany()
+                        .HasForeignKey("comunidadecpId");
+
+                    b.HasOne("Dizimo.Models.DizimistaModel", "dizimistacp")
+                        .WithMany()
+                        .HasForeignKey("dizimistacpId");
+
+                    b.Navigation("comunidadecp");
+
+                    b.Navigation("dizimistacp");
+                });
+
+            modelBuilder.Entity("Dizimo.Models.DizimistaModel", b =>
+                {
+                    b.HasOne("Dizimo.Models.ControlePagamentoModel", null)
+                        .WithMany("ListaDizimistaComunidades")
+                        .HasForeignKey("ControlePagamentoModelId");
                 });
 
             modelBuilder.Entity("Dizimo.Models.UsuarioModel", b =>
@@ -198,6 +305,13 @@ namespace Dizimo.Migrations
                         .IsRequired();
 
                     b.Navigation("comunidade");
+                });
+
+            modelBuilder.Entity("Dizimo.Models.ControlePagamentoModel", b =>
+                {
+                    b.Navigation("ListaDizimistaComunidades");
+
+                    b.Navigation("ListaPagamentoComunidades");
                 });
 
             modelBuilder.Entity("Dizimo.Models.UsuarioModel", b =>

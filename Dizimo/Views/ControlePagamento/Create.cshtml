@@ -1,0 +1,118 @@
+﻿@model Dizimo.Models.ControlePagamentoModel
+
+@{
+    ViewData["Title"] = "Incluir Dízimo";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Cadastrar Dízimo</h1>
+
+</div>
+
+
+
+@*original a partir de aqui*@
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DizimistaId" class="control-label"></label>
+                <input asp-for="DizimistaId" class="form-control" />
+                <span asp-validation-for="DizimistaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComunidadeId" class="control-label"></label>
+                <input asp-for="ComunidadeId" class="form-control" />
+                <span asp-validation-for="ComunidadeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioID" class="control-label"></label>
+                <input asp-for="UsuarioID" class="form-control" />
+                <span asp-validation-for="UsuarioID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesAno" class="control-label"></label>
+                <input asp-for="MesAno" class="form-control" />
+                <span asp-validation-for="MesAno" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Janeiro" /> @Html.DisplayNameFor(model => model.Janeiro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Fevereiro" /> @Html.DisplayNameFor(model => model.Fevereiro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Marco" /> @Html.DisplayNameFor(model => model.Marco)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Abril" /> @Html.DisplayNameFor(model => model.Abril)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Maio" /> @Html.DisplayNameFor(model => model.Maio)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Junho" /> @Html.DisplayNameFor(model => model.Junho)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Julho" /> @Html.DisplayNameFor(model => model.Julho)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Agosto" /> @Html.DisplayNameFor(model => model.Agosto)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Setembro" /> @Html.DisplayNameFor(model => model.Setembro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Outubro" /> @Html.DisplayNameFor(model => model.Outubro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Novembro" /> @Html.DisplayNameFor(model => model.Novembro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Dezembro" /> @Html.DisplayNameFor(model => model.Dezembro)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Atualizacao" class="control-label"></label>
+                <input asp-for="Atualizacao" class="form-control" />
+                <span asp-validation-for="Atualizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

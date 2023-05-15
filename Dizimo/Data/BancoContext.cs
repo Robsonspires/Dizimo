@@ -13,9 +13,9 @@ namespace Dizimo.Data
         }
 
         public DbSet<UsuarioModel> Usuarios { get; set; }
-        public DbSet<PessoaModel> Pessoas { get; set; }
+        public DbSet<DizimistaModel> Dizimistas { get; set; }
         public DbSet<ComunidadeModel> Comunidades { get; set; }
-
+        public DbSet<ControlePagamentoModel> ControlePagamentos { get; set; }
 
     }
 }

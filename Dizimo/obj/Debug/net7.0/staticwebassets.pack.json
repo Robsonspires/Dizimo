@@ -17,6 +17,114 @@
       "PackagePath": "staticwebassets\\favicon.old.ico"
     },
     {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\android-icon-144x144.png",
+      "PackagePath": "staticwebassets\\img\\icon\\android-icon-144x144.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\android-icon-192x192.png",
+      "PackagePath": "staticwebassets\\img\\icon\\android-icon-192x192.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\android-icon-36x36.png",
+      "PackagePath": "staticwebassets\\img\\icon\\android-icon-36x36.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\android-icon-48x48.png",
+      "PackagePath": "staticwebassets\\img\\icon\\android-icon-48x48.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\android-icon-72x72.png",
+      "PackagePath": "staticwebassets\\img\\icon\\android-icon-72x72.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\android-icon-96x96.png",
+      "PackagePath": "staticwebassets\\img\\icon\\android-icon-96x96.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-114x114.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-114x114.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-120x120.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-120x120.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-144x144.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-144x144.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-152x152.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-152x152.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-180x180.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-180x180.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-57x57.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-57x57.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-60x60.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-60x60.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-72x72.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-72x72.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-76x76.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-76x76.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon-precomposed.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon-precomposed.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\apple-icon.png",
+      "PackagePath": "staticwebassets\\img\\icon\\apple-icon.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\browserconfig.xml",
+      "PackagePath": "staticwebassets\\img\\icon\\browserconfig.xml"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\img\\icon\\favicon-16x16.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\img\\icon\\favicon-32x32.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\favicon-96x96.png",
+      "PackagePath": "staticwebassets\\img\\icon\\favicon-96x96.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\favicon.ico",
+      "PackagePath": "staticwebassets\\img\\icon\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\manifest.json",
+      "PackagePath": "staticwebassets\\img\\icon\\manifest.json"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\ms-icon-144x144.png",
+      "PackagePath": "staticwebassets\\img\\icon\\ms-icon-144x144.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\ms-icon-150x150.png",
+      "PackagePath": "staticwebassets\\img\\icon\\ms-icon-150x150.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\ms-icon-310x310.png",
+      "PackagePath": "staticwebassets\\img\\icon\\ms-icon-310x310.png"
+    },
+    {
+      "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\icon\\ms-icon-70x70.png",
+      "PackagePath": "staticwebassets\\img\\icon\\ms-icon-70x70.png"
+    },
+    {
       "Id": "D:\\Usr\\Projetos\\Dizimo\\Dizimo\\wwwroot\\img\\ofir1.jpg",
       "PackagePath": "staticwebassets\\img\\ofir1.jpg"
     },

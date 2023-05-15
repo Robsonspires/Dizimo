@@ -12,7 +12,7 @@ build_property.RootNamespace = Dizimo
 build_property.ProjectDir = D:\Usr\Projetos\Dizimo\Dizimo\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\Usr\Projetos\Dizimo\Dizimo
 build_property._RazorSourceGeneratorDebug = 
 
@@ -32,6 +32,42 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tdW5pZGFkZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/ControlePagamento/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJvbGVQYWdhbWVudG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/ControlePagamento/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJvbGVQYWdhbWVudG9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/ControlePagamento/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJvbGVQYWdhbWVudG9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/ControlePagamento/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJvbGVQYWdhbWVudG9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/ControlePagamento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJvbGVQYWdhbWVudG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Dizimista/DizimistaApagarConfirmacao.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGl6aW1pc3RhXERpemltaXN0YUFwYWdhckNvbmZpcm1hY2FvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Dizimista/DizimistaCriar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGl6aW1pc3RhXERpemltaXN0YUNyaWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Dizimista/DizimistaEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGl6aW1pc3RhXERpemltaXN0YUVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Usr/Projetos/Dizimo/Dizimo/Views/Dizimista/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGl6aW1pc3RhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Usr/Projetos/Dizimo/Dizimo/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,22 +82,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Usr/Projetos/Dizimo/Dizimo/Views/Login/RedefinirSenha.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVkZWZpbmlyU2VuaGEuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Usr/Projetos/Dizimo/Dizimo/Views/Pessoa/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Usr/Projetos/Dizimo/Dizimo/Views/Pessoa/PessoaApagarConfirmacao.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXFBlc3NvYUFwYWdhckNvbmZpcm1hY2FvLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Usr/Projetos/Dizimo/Dizimo/Views/Pessoa/PessoaCriar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXFBlc3NvYUNyaWFyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Usr/Projetos/Dizimo/Dizimo/Views/Pessoa/PessoaEditar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXFBlc3NvYUVkaXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Usr/Projetos/Dizimo/Dizimo/Views/Restrito/Index.cshtml]

@@ -1,0 +1,75 @@
+﻿@using System.Globalization;
+@*@model IEnumerable<Dizimo.Models.ControlePagamentoModel>*@
+@model List<ControlePagamentoModel>
+
+@{
+    ViewData["Title"] = "Controle do dízimo";
+}
+<div class="text-center p-3">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="ControlePagamento" asp-action="Create">Lançamento do dízimo</a>
+    </div>
+    <br />
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <br />
+
+    <h1 class="display-4">Listagem do dízimo</h1>
+
+    <table class="table" id="table-controlePagamento" style="width:100%">
+        <thead>
+            <tr>
+                @*<th scope="col">#</th>*@
+                <th scope="col">Dizimista</th>
+                <th scope="col">Comunidade</th>
+                <th scope="col">MesAno</th>
+                <th scope="col">Atualizado em</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model != null && Model.Any())
+        {
+                @foreach (ControlePagamentoModel controlePagamento in Model)
+                {
+                    <tr>
+                        @*<th scope="row">@controlePagamento.Id</th>*@
+                        <td>@controlePagamento.dizimistacp</td>
+                        <td>@controlePagamento.comunidadecp</td>
+                        <td>@controlePagamento.MesAno</td>
+
+                        <td>
+                            @controlePagamento.Atualizacao
+                        </td>
+
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@controlePagamento.Id" asp-controller="ControlePagamento" asp-action="Edit">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@controlePagamento.Id" asp-controller="ControlePagamento" asp-action="Delete">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+        }
+        else
+        {
+            <tr class="odd"><td valign="top" colspan="5">Nenhum Lançamento encontrado</td></tr>
+        }
+        </tbody>
+    </table>
+</div>

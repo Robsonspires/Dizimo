@@ -1,0 +1,120 @@
+﻿@model Dizimo.Models.ControlePagamentoModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ControlePagamentoModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DizimistaId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DizimistaId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ComunidadeId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ComunidadeId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UsuarioID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UsuarioID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MesAno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MesAno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Janeiro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Janeiro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fevereiro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fevereiro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Abril)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Abril)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Maio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Maio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Junho)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Junho)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Julho)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Julho)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Agosto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Agosto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Setembro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Setembro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Outubro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Outubro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Novembro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Novembro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dezembro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dezembro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Atualizacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Atualizacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

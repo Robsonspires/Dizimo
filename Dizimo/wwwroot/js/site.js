@@ -7,6 +7,8 @@ $(document).ready(function () {
     getDatatable('#table-contatos');
     getDatatable('#table-usuarios');
     getDatatable('#table-Comunidades');
+    getDatatable('#table-dizimistas');
+    getDatatable('#table-controlePagamento');
 });
 
 function getDatatable(idt) {

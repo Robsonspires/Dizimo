@@ -49,7 +49,8 @@ namespace Dizimo.Models
 
         public bool SenhaValida(string senha)
         {
-            //2ba733e086e7c2f98b3a193782146ad21060c051 -> 1340
+            // 2ba733e086e7c2f98b3a193782146ad21060c051 -> 1340
+            // 8cb2237d0679ca88db6464eac60da96345513964 -> 12345
             return Senha == senha.GerarHash();
         }
 

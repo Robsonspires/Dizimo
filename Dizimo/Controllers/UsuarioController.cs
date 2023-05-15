@@ -34,9 +34,9 @@ namespace Dizimo.Controllers
 
         public IActionResult Editar(int id)
         {
-            UsuarioModel usuario = _usuarioRepositorio.ListarPorId(id);
+            UsuarioModel usuario = new UsuarioModel();
+            usuario = _usuarioRepositorio.ListarPorId(id);
             usuario.ListaComunidades = _bancoContext.Comunidades.ToList();
-
             return View(usuario);
         }
         public IActionResult ApagarConfirmacao(int id)
@@ -91,6 +91,7 @@ namespace Dizimo.Controllers
                 return RedirectToAction("Index");
             }
         }
+
 
         [HttpPost]
         public IActionResult Editar(UsuarioModel usuario)

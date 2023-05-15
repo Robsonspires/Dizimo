@@ -1,0 +1,304 @@
+﻿@using Dizimo.Repositorio;
+@model Dizimo.Models.ControlePagamentoModel
+
+@{
+    ViewData["Title"] = "Manutenção da devolução";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Edição dos lançamentos</h1>
+</div>
+
+
+
+<form asp-controller="ControlePagamento" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="container h4">
+        <div class="card-header text-center bg-primary rounded bg-opacity-75 p-3">
+            <div class="row">
+                <div class="d-flex">
+                    <div class="col-4">
+                        <label class="mb-2 text-bg-light p-2" for="Dizimista">Dizimista: </label>
+                        <input type="text" asp-for="dizimistacp" class="form-control" placeholder="Digite o nome do dizimista">
+                        @Html.ValidationMessageFor(x => x.dizimistacp)
+                    </div>
+
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="comunidade" class="form-label">Comunidade</label>
+                            <select asp-for="ComunidadeId" class="form-select-lg">
+                                <option value="">Selecione</option>
+                                @foreach (var item in Model.ListaPagamentoComunidades)
+                                {
+                                    <option value="@item.Id">@item.Nome</option>
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(x => x.ComunidadeId)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group mb-3">
+                        <label for="MesAno">Ano</label>
+                        <select asp-for="MesAno" class="form-control">
+                            <option value="">Selecione</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                        </select>
+                        @Html.ValidationMessageFor(x => x.MesAno)
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card h4" style="margin:50px 0">
+                <div class="card-header text-center">
+                    Controle mensal
+                    <ul class="list-group text-center" style="margin:10px 0">
+                        <div class="row">
+                            <div class="col-lg">
+                        <li class="list-group-item">
+                            Janeiro
+                            <label class="switch ">
+                                <input type="checkbox" class="primary">
+                                <span class="slider round"></span>
+                            </label>
+                        </li>
+                </div>
+
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Fevereiro
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Março
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Abril
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Maio
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Junho
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Julho
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Agosto
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Setembro
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Outubro
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Novembro
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+                <div class="col-lg">
+                    <li class="list-group-item">
+                        Dezembro
+                        <label class="switch ">
+                            <input type="checkbox" class="primary">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </div>
+            </div>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</form>
+
+
+
+
+
+
+@*Original a partir daqui*@
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="DizimistaId" class="control-label"></label>
+                <input asp-for="DizimistaId" class="form-control" />
+                <span asp-validation-for="DizimistaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComunidadeId" class="control-label"></label>
+                <input asp-for="ComunidadeId" class="form-control" />
+                <span asp-validation-for="ComunidadeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioID" class="control-label"></label>
+                <input asp-for="UsuarioID" class="form-control" />
+                <span asp-validation-for="UsuarioID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesAno" class="control-label"></label>
+                <input asp-for="MesAno" class="form-control" />
+                <span asp-validation-for="MesAno" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Janeiro" /> @Html.DisplayNameFor(model => model.Janeiro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Fevereiro" /> @Html.DisplayNameFor(model => model.Fevereiro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Marco" /> @Html.DisplayNameFor(model => model.Marco)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Abril" /> @Html.DisplayNameFor(model => model.Abril)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Maio" /> @Html.DisplayNameFor(model => model.Maio)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Junho" /> @Html.DisplayNameFor(model => model.Junho)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Julho" /> @Html.DisplayNameFor(model => model.Julho)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Agosto" /> @Html.DisplayNameFor(model => model.Agosto)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Setembro" /> @Html.DisplayNameFor(model => model.Setembro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Outubro" /> @Html.DisplayNameFor(model => model.Outubro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Novembro" /> @Html.DisplayNameFor(model => model.Novembro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Dezembro" /> @Html.DisplayNameFor(model => model.Dezembro)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Atualizacao" class="control-label"></label>
+                <input asp-for="Atualizacao" class="form-control" />
+                <span asp-validation-for="Atualizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
