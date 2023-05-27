@@ -10,184 +10,224 @@
 </div>
 
 
-
 <form asp-controller="ControlePagamento" asp-action="Edit" method="post">
     <input type="hidden" asp-for="Id" />
+
+    <div class="container p-2">
+        <div class="card-header text-center bg-primary rounded bg-opacity-75 p-2">
+            <div class="row">
+                <div class="d-flex">
+                    <div class="col-5 p-2">
+                        <label class="mb-2 text-bg-light p-2" for="Dizimista">Dizimista: </label>
+                        <input type="text" asp-for="dizimistacp" class="form-control-lg" placeholder="Digite o nome do dizimista">
+                        @Html.ValidationMessageFor(x => x.dizimistacp)
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="comunidade" class="form-label">Comunidade</label>
+                                <select asp-for="ComunidadeId" class="form-select-lg">
+                                    <option value="">Selecione</option>
+                                    @foreach (var item in Model.ListaPagamentoComunidades)
+                                    {
+                                        <option value="@item.Id">@item.Nome</option>
+                                    }
+                                </select>
+                                @Html.ValidationMessageFor(x => x.ComunidadeId)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label for="MesAno">Ano</label>
+                            <select asp-for="MesAno" class="form-control-lg">
+                                <option value="">Selecione</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                            </select>
+                            @Html.ValidationMessageFor(x => x.MesAno)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container h4">
         <div class="card-header text-center bg-primary rounded bg-opacity-75 p-3">
             <div class="row">
                 <div class="d-flex">
                     <div class="col-4">
-                        <label class="mb-2 text-bg-light p-2" for="Dizimista">Dizimista: </label>
-                        <input type="text" asp-for="dizimistacp" class="form-control" placeholder="Digite o nome do dizimista">
-                        @Html.ValidationMessageFor(x => x.dizimistacp)
+                        <label class="mb-2 text-bg-light p-2" for="Usuario">
+                            Dizimista: Fulano de tal
+                            Aqui
+                        </label>
                     </div>
-
                     <div class="col-4">
                         <div class="form-group">
-                            <label for="comunidade" class="form-label">Comunidade</label>
-                            <select asp-for="ComunidadeId" class="form-select-lg">
-                                <option value="">Selecione</option>
-                                @foreach (var item in Model.ListaPagamentoComunidades)
-                                {
-                                    <option value="@item.Id">@item.Nome</option>
-                                }
+                            <label for="Comunidade">Comunidade:</label>
+                            <select for="Comunidade" class="form-select-lg">
+                                <option value="0">Selecione a comunidade</option>
+                                <option value="1">São Judas Tadeu</option>
+                                <option value="2">Santa Cruz</option>
+                                <option value="3">Divino Espírito Santo</option>
+                                <option value="4">São Sebastião</option>
                             </select>
-                            @Html.ValidationMessageFor(x => x.ComunidadeId)
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="AnoLancamento">Ano do lançamento:</label>
+                            <select for="AnoLancamento" class="form-select-lg">
+                                <option value="0">Selecione o ano</option>
+                                <option value="1">2020</option>
+                                <option value="2">2021</option>
+                                <option value="3">2022</option>
+                                <option value="4">2023</option>
+                                <option value="5">2024</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="form-group mb-3">
-                        <label for="MesAno">Ano</label>
-                        <select asp-for="MesAno" class="form-control">
-                            <option value="">Selecione</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                        </select>
-                        @Html.ValidationMessageFor(x => x.MesAno)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card h4" style="margin:50px 0">
+                    <div class="card-header text-center">
+                        Controle mensal
+                        <ul class="list-group text-center" style="margin:10px 0">
+                            <span class="row">
+                                <span class="col-lg">
+                            <li class="list-group-item">
+                                Janeiro
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+
+                            <span class="col-lg">
+                            <li class="list-group-item">
+                                Fevereiro
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+                            <span class="col-lg">
+                            <li class="list-group-item">
+                                Março
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+                            </span>
+                            <span class="row">
+                                <span class="col-lg">
+                            <li class="list-group-item">
+                                Abril
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+
+                            <span class="col-lg">
+                            <li class="list-group-item">
+                                Maio
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+                            <span class="col-lg">
+                            <li class="list-group-item">
+                                Junho
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+                            </span>
+                            <span class="row">
+                                <span class="col-lg">
+                            <li class="list-group-item">
+                                Julho
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+
+                            <span class="col-lg">
+                            <li class="list-group-item">
+                                Agosto
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+                            <span class="col-lg">
+                            <li class="list-group-item">
+                                Setembro
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+                            </span>
+                            <span class="row">
+                                <span class="col-lg">
+                            <li class="list-group-item">
+                                Outubro
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+
+                            <span class="col-lg">
+                            <li class="list-group-item">
+                                Novembro
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+                            <span class="col-lg">
+                            <li class="list-group-item">
+                                Dezembro
+                                <label class="switch ">
+                                    <input type="checkbox" class="ofircolor">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            </span>
+                            </span>
+                        </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="card h4" style="margin:50px 0">
-                <div class="card-header text-center">
-                    Controle mensal
-                    <ul class="list-group text-center" style="margin:10px 0">
-                        <div class="row">
-                            <div class="col-lg">
-                        <li class="list-group-item">
-                            Janeiro
-                            <label class="switch ">
-                                <input type="checkbox" class="primary">
-                                <span class="slider round"></span>
-                            </label>
-                        </li>
-                </div>
 
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Fevereiro
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Março
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Abril
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
 
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Maio
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Junho
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Julho
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Agosto
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Setembro
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Outubro
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Novembro
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-                <div class="col-lg">
-                    <li class="list-group-item">
-                        Dezembro
-                        <label class="switch ">
-                            <input type="checkbox" class="primary">
-                            <span class="slider round"></span>
-                        </label>
-                    </li>
-                </div>
-            </div>
-            </ul>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
 </form>
 
 
@@ -196,7 +236,7 @@
 
 
 @*Original a partir daqui*@
-<div class="row">
+<div class="row p-3">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>

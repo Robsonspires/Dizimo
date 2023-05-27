@@ -27,23 +27,23 @@
             <input type="text" asp-for="Login" class="form-control" id="Login">
             @Html.ValidationMessageFor(x => x.Login)
         </div>
-        
+
         <div class="mb-3">
             <label for="senha" class="form-label">Senha</label>
             <input type="password" asp-for="Senha" class="form-control" id="senha">
             @Html.ValidationMessageFor(x => x.Senha)
         </div>
-        
+
         <div class="mb-3">
             <p class="mb-4 text-sm">
                 Esqueceu sua senha?
-                <a asp-action="RedefinirSenha" asp-controller="Login" class="text-primary text-gradient font-weight-bold"  >Redefinir minha senha</a>
+                <a asp-action="RedefinirSenha" asp-controller="Login" class="text-primary text-gradient font-weight-bold">Redefinir minha senha</a>
             </p>
         </div>
-        
+
         <div class="d-grid mb-3 gap-2 ">
             <button type="submit" class="btn mb-3 btn-primary">Entrar</button>
         </div>
-        
+
     </div>
 </form>
